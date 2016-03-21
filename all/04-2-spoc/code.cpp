@@ -34,8 +34,8 @@ int main()
 			{
 				lastVisitTime[page] = curTime;
 				for (int i = head;i < lastMiss;++ i)
-					if (lastVisitTime[i] < lastMiss)
-						lastVisitTime[page] = -1;
+					if (lastVisitTime[seq[i]] < lastMiss)
+						lastVisitTime[seq[i]] = -1;
 				head = lastMiss;
 			}
 			lastMiss = curTime;
