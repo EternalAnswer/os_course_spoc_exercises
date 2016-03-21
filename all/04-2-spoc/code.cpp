@@ -32,17 +32,20 @@ int main()
 				lastVisitTime[page] = curTime;
 			else
 			{
+				lastVisitTime[page] = curTime;
 				for (int i = head;i < lastMiss;++ i)
 					if (lastVisitTime[i] < lastMiss)
 						lastVisitTime[page] = -1;
+				head = lastMiss;
 			}
-			lastMiss = curTime ++;
+			lastMiss = curTime;
 		}
 		else
 		{
 			printf("Hit\n");
 			lastVisitTime[page] = curTime;
 		}
+		++ curTime;
 	}
 
 	return 0;
